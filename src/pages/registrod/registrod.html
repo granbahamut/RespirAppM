@@ -7,12 +7,17 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>registrod</ion-title>
+    <ion-title>Registro de quejas</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-item>
+    <ion-label>Nivel</ion-label>
+    <ion-select [(ngModel)]="nivel">
+      <ion-option *ngFor="let nivel of arrayNivelesCont" [value]="nivel.nombre">{{nivel.nombre}}</ion-option>
+    </ion-select>
+  </ion-item>
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ApplicationServiceProvider } from '../../providers/application-service/application-service';
 
 /**
  * Generated class for the RegistrodPage page.
@@ -15,11 +16,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegistrodPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  arrayNivelesCont:any[] = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public applicationService:ApplicationServiceProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistrodPage');
+    this.applicationService.getNivelContaminacion().subscribe(
+      (val) => {
+        console.log(val);
+        this.arrayNivelesCont = val;
+      }, 
+      (error) => {console.error(error)}
+    );
   }
 
 }
