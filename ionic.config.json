@@ -1,0 +1,7 @@
+{
+  "name": "AppRespirapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
