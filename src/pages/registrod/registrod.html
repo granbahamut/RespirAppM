@@ -7,18 +7,13 @@
 <ion-header>
 
   <ion-navbar>
-<<<<<<< HEAD
     <ion-title>Registro de Denuncia</ion-title>
-=======
-    <ion-title>Registro de quejas</ion-title>
->>>>>>> 3ded9eeea4482a9e3aaf38407a93900f2ab98cdd
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-<<<<<<< HEAD
 
   <ion-list>
     <ion-item>
@@ -33,8 +28,7 @@
     <ion-item>
       <ion-label>Tipo de Reporte</ion-label>
       <ion-select [(ngModel)]="tiporep">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
+        <ion-option *ngFor="let tiporep of arrayTipoRep" [value]="tiporep.nombre">{{tiporep.nombre}}</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
@@ -42,12 +36,4 @@
   <p>Ubicación</p> 
 <p>Foto Incidente</p>
 <p><ion-icon name="home"></ion-icon></p>
-=======
-  <ion-item>
-    <ion-label>Nivel</ion-label>
-    <ion-select [(ngModel)]="nivel">
-      <ion-option *ngFor="let nivel of arrayNivelesCont" [value]="nivel.nombre">{{nivel.nombre}}</ion-option>
-    </ion-select>
-  </ion-item>
->>>>>>> 3ded9eeea4482a9e3aaf38407a93900f2ab98cdd
 </ion-content>

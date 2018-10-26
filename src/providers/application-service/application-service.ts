@@ -16,11 +16,21 @@ export class ApplicationServiceProvider {
     console.log('Hello ApplicationServiceProvider Provider');
   }
 
-  /*Obtiene a de niveles de contaminación que hay en la BD*/
+  /*Obtiene los niveles de contaminación que hay en la BD*/
   getNivelContaminacion(){
-    this.dbData = this.http.get("https://shielded-savannah-22643.herokuapp.com/contamination_levels.json");
+    this.dbData = this.http.get("https://aqueous-thicket-67866.herokuapp.com/contamination_levels.json");
     console.log(this.dbData);
     return this.dbData;
   }
 
+    /*Obtiene los tipos de reporte que hay en la BD*/
+    getTipoRep(){
+      this.dbData = this.http.get("https://aqueous-thicket-67866.herokuapp.com/report_types.json");
+      console.log(this.dbData);
+      return this.dbData;
+    }
+
+    //Funcion para enviar datos
+    
+    ///////
 }
